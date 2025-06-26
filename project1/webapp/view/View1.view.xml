@@ -1,0 +1,118 @@
+<mvc:View
+    controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+>
+    <f:FlexibleColumnLayout
+        id="loginFCL"
+        layout="OneColumn"
+    >
+        <f:beginColumnPages>
+            <VBox
+                id="loginBox"
+                class="page1"
+                justifyContent="Start"
+                alignItems="Stretch"
+                width="100%"
+                alignContent="Start"
+                fitContainer="true"
+            >
+                <!-- Header Logo & Text -->
+                <HBox
+                    id="headerBox"
+                    class="sapUiResponsiveMargin"
+                    justifyContent="SpaceBetween"
+                    alignItems="Center"
+                    width="100%"
+                    wrap="Wrap"
+                >
+                    <!-- Logo pojok kiri -->
+                    <VBox
+                        id="logoBox"
+                        justifyContent="Center"
+                        alignItems="Start"
+                        class="sapUiSmallMargin"
+                    >
+                        <!-- <Image
+                            id="logoImage"
+                            src="../images/logo1.png"
+                            width="100px"
+                            height="auto"
+                        /> -->
+                    </VBox>
+
+                    <!-- Text pojok kanan -->
+                    <VBox
+                        id="logoBox2"
+                        justifyContent="Center"
+                        alignItems="End"
+                        class="sapUiSmallMargin images2"
+                    >
+                        <!-- <Image
+                            id="logoImages"
+                            src="../images/satuindo.png"
+                            width="100px"
+                            height="auto"
+                        /> -->
+                    </VBox>
+                </HBox>
+
+                <!-- Panel Login -->
+                <VBox
+                    id="_IDGenVBox3"
+                    class="sapUiSmallMargin"
+                    justifyContent="Center"
+                    alignItems="Center"
+                    alignContent="Center"
+                    fitContainer="true"
+                >
+                    <!-- Judul -->
+                    <Title
+                        id="_IDGenTitle"
+                        text="Login"
+                        level="H1"
+                        titleStyle="H1"
+                        class="sapUiTinyMarginBottom sapUiSmallMarginTop"
+                    />
+
+                    <!-- Subjudul -->
+                    <Text
+                        id="_IDGenText"
+                        text="Welcome back! Login to access your User account."
+                        class="sapUiTinyMarginBottom"
+                    />
+
+                    <!-- Input Email -->
+                    <Input
+                        id="usernameInput"
+                        value="{/username}"
+                        placeholder="User SAP"
+                        width="300px"
+                        class="sapUiSmallMarginBottom"
+                    />
+
+                    <!-- Tombol Login -->
+                    <Button
+                        id="loginButton"
+                        text="Login"
+                        type="Emphasized"
+                        width="300px"
+                        class="sapUiSmallMarginBottom"
+                        press="onLoginPress"
+                    />
+
+                    <!-- Link Forgot Password -->
+                    <!-- <Link
+                        id="_IDGenLink"
+                        text="Forgot Password"
+                        class="sapUiTinyMarginTop"
+                        press="onForgotPassword"
+                    /> -->
+                </VBox>
+            </VBox>
+        </f:beginColumnPages>
+    </f:FlexibleColumnLayout>
+</mvc:View>

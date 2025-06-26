@@ -1,0 +1,113 @@
+<mvc:View
+    controllerName="project1.controller.Data"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    height="100%"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
+>
+    <Page
+        id="page"
+        title="{i18n>listMaterial}"
+        showHeader="true"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+    >
+        <content>
+            <f:DynamicPage
+                id="dynamicPage"
+                fitContent="true"
+            >
+                <f:header>
+                    <f:DynamicPageHeader id="_IDGenDynamicPageHeader">
+                        <smartFilterBar:SmartFilterBar
+                            id="smartFilterBar"
+                            entitySet="getDataTytPolSet"
+                            persistencyKey="SmartFilter_Explored"
+                            hSpacing="1"
+                            vSpacing="1"
+                            showClearOnFB="true"
+                            showGoOnFB="true"
+                        >
+                            <smartFilterBar:controlConfiguration>
+                                <smartFilterBar:ControlConfiguration
+                                    id="_IDGenControlConfiguration"
+                                    key="materialno"
+                                    visibleInAdvancedArea="true"
+                                />
+                                <smartFilterBar:ControlConfiguration
+                                    id="_IDGenControlConfiguration2"
+                                    key="materialtypecode"
+                                    visibleInAdvancedArea="true"
+                                />
+                            </smartFilterBar:controlConfiguration>
+                        </smartFilterBar:SmartFilterBar>
+                    </f:DynamicPageHeader>
+                </f:header>
+                <f:content>
+                    <smartTable:SmartTable
+                        id="LineItemsSmartTable"
+                        entitySet="getDataTytPolSet"
+                        smartFilterId="smartFilterBar"
+                        tableType="ResponsiveTable"
+                        useVariantManagement="true"
+                        useTablePersonalisation="true"
+                        header="Materials"
+                        showRowCount="true"
+                        persistencyKey="SmartTableAnalytical_Explored"
+                        enableAutoBinding="true"
+                        class="sapUiResponsiveContentPadding"
+                        editTogglable="false"
+                        initiallyVisibleFields="materialno,materialdescription,materialGroup,materialtypecode,storagelocationcode,Netweight,Weightunit"
+                        demandPopin="true"
+                        useExportToExcel="true"
+                        
+                    >
+                        <smartTable:customToolbar>
+                            <OverflowToolbar
+                                id="_IDGenOverflowToolbar"
+                                design="Transparent"
+                            >
+                                <ToolbarSpacer id="_IDGenToolbarSpacer" />
+                                <OverflowToolbarButton
+                                    id="_IDGenOverflowToolbarButton1"
+                                    icon="sap-icon://sort"
+                                    tooltip="Sort"
+                                    text="Sort"
+                                    press="onSort"
+                                />
+                                <OverflowToolbarButton
+                                    id="_IDGenOverflowToolbarButton2"
+                                    icon="sap-icon://filter"
+                                    tooltip="Filter"
+                                    text="Filter"
+                                    press="onFilter"
+                                />
+                                <OverflowToolbarButton
+                                    id="_IDGenOverflowToolbarButton3"
+                                    icon="sap-icon://group-2"
+                                    tooltip="Group"
+                                    text="Group"
+                                    press="onGroup"
+                                />
+                                
+                            </OverflowToolbar>
+                        </smartTable:customToolbar>
+                        <!-- <Table
+                            id="_IDGenTable"
+                            growing="true"
+                            mode="None"
+                            selectionChange="onSelectList"
+                        >
+
+                        </Table> -->
+                    </smartTable:SmartTable>
+                </f:content>
+            </f:DynamicPage>
+        </content>
+    </Page>
+</mvc:View>
