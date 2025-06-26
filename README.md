@@ -1,2 +1,35 @@
-# listMaterials
-A responsive SAPUI5 Fiori application that displays and filters material inventory data via SAP On-Premise OData services. Built with HTML, CSS, JavaScript, and Smart Controls like SmartFilterBar and SmartTable.
+🔷 SAP Fiori Application - Inventory Material Viewer
+This project is a custom SAP Fiori application built using SAPUI5 framework with integration to SAP On-Premise OData services. The app provides a responsive and user-friendly interface for displaying and filtering inventory material data.
+
+🚀 Technologies Used
+SAPUI5 (XML Views + MVC pattern)
+
+HTML5 (custom UI enhancements)
+
+CSS3 (for styling custom elements and responsiveness)
+
+JavaScript (event handling and UI logic)
+
+OData V2 (SAP On-Premise) for data retrieval via ABAP Gateway
+
+📦 Features
+🔍 SmartFilterBar Integration
+Filter materials by Material No, Type, Group, Storage Location, etc.
+
+📋 SmartTable with ResponsiveTable type
+Displays material list with growing scroll, sorting, filtering, and Excel export.
+
+🧭 Row Navigation
+Tap or click on a material row to navigate to detailed view.
+
+🔐 Login Validation
+Integrated login flow using OData service and session storage.
+
+📱 Mobile & Tablet Friendly
+Fully responsive layout using SAP Fiori design principles and responsive containers.
+
+⏳ Session Timeout Logic
+Auto logout after inactivity, with toast message and redirect.
+
+🔗 Backend Integration
+The frontend is tightly integrated with SAP On-Premise via OData V2, consuming a custom entity set (e.g., getDataTytPolSet) built via SAP Gateway SEGW project
