@@ -12,22 +12,37 @@ This project is a custom SAP Fiori application built using SAPUI5 framework with
 
 📦 Features <br>
 🔍 SmartFilterBar Integration
-Filter materials by Material No, Type, Group, Storage Location, etc.
+<ul>
+  <li>Filter materials by Material No, Type, Group, Storage Location, etc.</li>
+</ul>
 
 📋 SmartTable with ResponsiveTable type
-Displays material list with growing scroll, sorting, filtering, and Excel export.
+<ul>
+  <li>Displays material list with growing scroll, sorting, filtering, and Excel export.</li>
+</ul>
 
 🧭 Row Navigation
-Tap or click on a material row to navigate to detailed view.
+<ul>
+  <li>Tap or click on a material row to navigate to detailed view.</li>
+</ul>
 
 🔐 Login Validation
-Integrated login flow using OData service and session storage.
+<ul>
+  <li>Integrated login flow using OData service and session storage.</li>
+</ul>
 
 📱 Mobile & Tablet Friendly
-Fully responsive layout using SAP Fiori design principles and responsive containers.
+<ul>
+  <li>Fully responsive layout using SAP Fiori design principles and responsive containers.</li>
+</ul>
 
 ⏳ Session Timeout Logic
-Auto logout after inactivity, with toast message and redirect.
+<ul>
+  <li>Auto logout after inactivity, with toast message and redirect.</li>
+</ul>
 
 🔗 Backend Integration <br>
-The frontend is tightly integrated with SAP On-Premise via OData V2, consuming a custom entity set built via SAP Gateway SEGW project
+<ul>
+  <li>The frontend is tightly integrated with SAP On-Premise via OData V2, consuming a custom entity set built via SAP Gateway SEGW project</li>
+</ul>
+
