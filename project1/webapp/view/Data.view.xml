@@ -65,7 +65,6 @@
                         initiallyVisibleFields="materialno,materialdescription,materialGroup,materialtypecode,storagelocationcode,Netweight,Weightunit"
                         demandPopin="true"
                         useExportToExcel="true"
-                        
                     >
                         <smartTable:customToolbar>
                             <OverflowToolbar
@@ -97,14 +96,17 @@
                                 
                             </OverflowToolbar>
                         </smartTable:customToolbar>
-                        <!-- <Table
+                        <Table
                             id="_IDGenTable"
                             growing="true"
-                            mode="None"
-                            selectionChange="onSelectList"
                         >
-
-                        </Table> -->
+                            <ColumnListItem
+                                id="_IDGenColumnListItem"
+                                type="Navigation"
+                                press="onItemPress"
+                            >
+                            </ColumnListItem>
+                        </Table>
                     </smartTable:SmartTable>
                 </f:content>
             </f:DynamicPage>

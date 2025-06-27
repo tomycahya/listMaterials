@@ -26,33 +26,9 @@ sap.ui.define(
 
         // set the device model
         this.setModel(models.createDeviceModel(), "device");
-        // Akan logout ketika tidak ada aktivitas selama 5 menit
-        this._initIdleTimeout();
+        
       },
-      _initIdleTimeout: function () {
-        var that = this;
-        var timeout = 300000; // 5 menit
-        var timer;
-
-        var resetTimer = function () {
-          clearTimeout(timer);
-          timer = setTimeout(function () {
-            sap.m.MessageBox.warning(
-              "Session expired. Redirecting to login...",
-              {
-                onClose: function () {
-                  that.getRouter().navTo("RouteView1", {}, true); // gunakan `that` di sini
-                },
-              }
-            );
-          }, timeout);
-        };
-
-        // Reset timer on user activity
-        document.addEventListener("mousemove", resetTimer);
-        document.addEventListener("keydown", resetTimer);
-        resetTimer();
-      },
+      
     });
   }
 );
