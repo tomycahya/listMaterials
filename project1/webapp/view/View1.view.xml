@@ -72,7 +72,7 @@
                     <!-- Judul -->
                     <Title
                         id="_IDGenTitle"
-                        text="Login"
+                        text="SAP Logon"
                         level="H1"
                         titleStyle="H1"
                         class="sapUiTinyMarginBottom sapUiSmallMarginTop"

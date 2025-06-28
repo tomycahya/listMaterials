@@ -2,159 +2,176 @@
     controllerName="project1.controller.Detail"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
-    xmlns="sap.m"
-    xmlns:f="sap.ui.layout.form"
-    height="100%"
+    xmlns="sap.uxap"
+    xmlns:m="sap.m"
+    xmlns:form="sap.ui.layout.form"
 >
-    <Page
-        id="page2"
-        title="{i18n>listMaterial}"
-        showHeader="true"
-        class="sapUiResponsiveContentPadding"
-        showNavButton="true"
-        navButtonPress="onNavBack"
+    <ObjectPageLayout
+        id="opportunityPage"
+        showHeaderContent="true"
+        useIconTabBar="true"
+        showFooter="true"
     >
-        <content>
-            <ObjectHeader
-                title="{/materialno}"
-                id="object"
-                backgroundDesign="Solid"
-                responsive="true"
-                fullScreenOptimized="true"
-                icon="sap-icon://product"
-                intro="{/materialdescription}"
-                titleActive="true"
-                class="sapUiResponsivePadding--header"
-                number="{/Netweight}"
-                numberUnit="{/Weightunit}"
-                numberState="Success"
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle
+                id="_IDGenObjectPageDynamicHeaderTitle"
             >
-                <attributes>
-                    <ObjectAttribute
-                        id="oattr"
-                        title="Material Group"
-                        text="{/materialGroup}"
-
-                    />
-                    <ObjectAttribute
-                        id="oattr2"
-                        title="Material Type"
-                        text="{/materialtypecode}"
-                    />
-                </attributes>
-                <statuses>
-                    <ObjectStatus
-                        text="{/storagelocationcode}"
-                        id="ObjectStatus2"
-                        title="Storage Location"
-                    />
-                </statuses>
-            </ObjectHeader>
-
-            <IconTabBar
-                id="icon1"
-                selectedKey="key3"
-                class="sapUiResponsiveContentPadding"
-            >
-                <items>
-                    <IconTabFilter
-                        id="iconfilter"
-                        key="details"
-                        text="Details"
-                        icon="sap-icon://detail-view"
-                    >
-                        <!-- <f:SimpleForm
-                            id="smpleform"
-                            backgroundDesign="Solid"
-                            layout="ResponsiveGridLayout"
-                            labelSpanL="3"
-                            labelSpanM="3"
-                            emptySpanL="4"
-                            emptySpanM="4"
-                        > -->
-                            <!-- <f:content>
-                                <Label
-                                    id="label1"
-                                    text="Product ID."
-                                />
-                                <Text
-                                    id="text1"
-                                    text="{productModel>/ID}"
-                                />
-                                <Label
-                                    id="label"
-                                    text="Product Name"
-                                />
-                                <Text
-                                    id="text"
-                                    text="{productModel>/Name}"
-                                />
-                                <Label
-                                    id="labelPrice"
-                                    text="Product Price"
-                                />
-                                <Text
-                                    id="textPrice"
-                                    text="{
-                                        parts: [
-                                            {path: 'productModel>/Price'},
-                                            {path: 'USD'}
-                                        ],
-                                        type: 'sap.ui.model.type.Currency',
-                                        formatOptions: {showMeasure: false}
-                                    }"
-                                />
-                            </f:content> -->
-                            <Text id="text1" text="Details Content"></Text>
-                        <!-- </f:SimpleForm> -->
-                    </IconTabFilter>
-                    <IconTabFilter
-                        id="_IDGenIconTabFilter"
-                        key="attachments"
-                        icon="sap-icon://attachment"
-                        count="3"
-                    >
-                        <Text
+                <!-- Heading saat header dalam mode penuh -->
+                <heading>
+                    <m:VBox id="_IDGenVBox">
+                        <m:Title
+                            id="_IDGenTitle1"
+                            text="Detail Materials {= ${/materialno} }"
+                            level="H2"
+                        />
+                        <m:Text
                             id="_IDGenText1"
-                            text="Attachments go here ..."
+                            text="{/materialdescription}"
                         />
-                    </IconTabFilter>
-                    <IconTabFilter
-                        id="_IDGenIconTabFilter1"
-                        key="notes"
-                        icon="sap-icon://notes"
-                        count="12"
+                    </m:VBox>
+                </heading>
+
+                <!-- Heading saat header mengecil (snap mode) -->
+                <snappedHeading>
+                    <m:Title
+                        id="_IDGenTitle2"
+                        text="Master Proposal: New"
+                        level="H4"
+                    />
+                </snappedHeading>
+
+                <!-- Tombol aksi -->
+                <actions>
+                    <m:Button
+                        id="_IDGenButton"
+                        text="New"
+                        enabled="false"
+                    />
+                    <m:Button
+                        id="_IDGenButton1"
+                        text="Edit"
+                    />
+                    <m:Button
+                        id="_IDGenButton2"
+                        text="Delete"
+                    />
+                    <m:Button
+                        id="_IDGenButton3"
+                        text="Copy"
+                    />
+                    <!-- <m:Button
+                        id="_IDGenButton4"
+                        text="Create Follow-Up"
+                        enabled="false"
+                    />
+                    <m:Button
+                        id="_IDGenButton5"
+                        text="Trigger Output"
+                        type="Emphasized"
+                    /> -->
+                    <m:MenuButton
+                        id="_IDGenMenuButton"
+                        type="Transparent"
+                        icon="sap-icon://overflow"
+                        menuPosition="EndTop"
                     >
-                        <Text
-                            id="_IDGenText2"
-                            text="Notes go here ..."
-                        />
-                    </IconTabFilter>
-                </items>
-            </IconTabBar>
-        </content>
-        <footer>
-            <Bar
-                id="barDetail"
-                design="Footer"
+                        <m:menu>
+                            <m:Menu id="_IDGenMenu">
+                                <m:MenuItem id="_IDGenMenuItem"
+                                    text="Preview Output"
+                                    press="onPreviewOutput"
+                                />
+                                <m:MenuItem id="_IDGenMenuItem1"
+                                    text="Sales Assistant"
+                                    enabled="false"
+                                />
+                                <m:MenuItem id="_IDGenMenuItem2"
+                                    text="Distribute"
+                                    enabled="false"
+                                />
+                                <m:MenuItem id="_IDGenMenuItem3"
+                                    text="My DashBoard"
+                                    icon="sap-icon://home"
+                                    press="onDashboard"
+                                />
+                                <m:MenuItem id="_IDGenMenuItem4"
+                                    text="Personalize"
+                                    icon="sap-icon://action-settings"
+                                    press="onPersonalize"
+                                />
+                                <m:MenuItem id="_IDGenMenuItem5"
+                                    text="Print Page"
+                                    icon="sap-icon://print"
+                                    press="onPrint"
+                                />
+                            </m:Menu>
+                        </m:menu>
+                    </m:MenuButton>
+                </actions>
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>
+
+        <sections>
+            <ObjectPageSection
+                id="_IDGenObjectPageSection"
+                title="Opportunity Details"
             >
-                <contentRight>
-                    <Button
-                        id="editButton"
-                        type="Default"
-                        press="onUpdate"
-                        text="Edit Materials"
-                        icon="sap-icon://edit"
+                <ObjectPageSubSection id="_IDGenObjectPageSubSection">
+                    <blocks>
+                        <m:Text
+                            id="_IDGenText2"
+                            text="Opportunity Details content goes here."
+                        />
+                    </blocks>
+                </ObjectPageSubSection>
+            </ObjectPageSection>
+
+            <!-- Tab lainnya -->
+            <ObjectPageSection
+                id="_IDGenObjectPageSection1"
+                title="Parties Involved"
+            >
+                <ObjectPageSubSection id="_IDGenObjectPageSubSection1">
+                    <blocks>
+                        <m:Text
+                            id="_IDGenText3"
+                            text="Parties involved content goes here."
+                        />
+                    </blocks>
+                </ObjectPageSubSection>
+            </ObjectPageSection>
+
+            <ObjectPageSection
+                id="_IDGenObjectPageSection2"
+                title="Organizational Data"
+            >
+                <ObjectPageSubSection id="_IDGenObjectPageSubSection2">
+                    <blocks>
+                        <m:Text
+                            id="_IDGenText4"
+                            text="Organizational data content goes here."
+                        />
+                    </blocks>
+                </ObjectPageSubSection>
+            </ObjectPageSection>
+        </sections>
+
+        <!-- <footer>
+            <m:Bar id="_IDGenBar">
+                <m:contentRight>
+                    <m:Button
+                        id="_IDGenButton6"
+                        text="Save"
+                        type="Emphasized"
+                        press="onSave"
                     />
-                    <Button
-                        id="deleteButton"
-                        text="Delete Materials"
-                        type="Reject"
-                        press="onDelete"
-                        icon="sap-icon://delete"
+                    <m:Button
+                        id="_IDGenButton7"
+                        text="Cancel"
+                        press="onCancel"
                     />
-                </contentRight>
-            </Bar>
-        </footer>
-    </Page>
+                </m:contentRight>
+            </m:Bar>
+        </footer> -->
+    </ObjectPageLayout>
 </mvc:View>

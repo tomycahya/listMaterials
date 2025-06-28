@@ -5,3 +5,28 @@
     background-repeat: no-repeat;
 }
 
+/* Responsive: tampilan mobile */
+@media (max-width: 600px) {
+    #loginBox {
+        alignItems: Center !important;
+    }
+
+    #_IDGenVBox3 {
+        width: 90% !important;
+    }
+
+    #usernameInput,
+    #loginButton {
+        width: 100% !important;
+    }
+
+    #headerBox {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #logoBox, #logoBox2 {
+        align-items: center !important;
+    }
+}

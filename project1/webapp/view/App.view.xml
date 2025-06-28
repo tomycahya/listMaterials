@@ -1,7 +1,27 @@
-<mvc:View controllerName="project1.controller.App"
+<mvc:View
+    controllerName="project1.controller.App"
     xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <App id="app">
-    </App>
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+>
+    <!-- <f:ShellBar
+        id="sapFShellBarSample"
+        title="Application Title"
+        secondTitle="Short description"
+        homeIcon="./resources/sap/ui/documentation/sdk/images/logo_sap.png"
+        showSearch="true"
+        showMenuButton="false"
+        showNavButton="true"
+        showNotifications="true"
+        class="sapFShellBarFCLFPHeader"
+        notificationsNumber="2"
+
+    >
+        <f:profile>
+            <Avatar id="_IDGenAvatar" initials="UI" />
+        </f:profile>
+    </f:ShellBar> -->
+    <App id="app" />
 </mvc:View>
