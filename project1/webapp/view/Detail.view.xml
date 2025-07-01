@@ -4,7 +4,7 @@
     displayBlock="true"
     xmlns="sap.uxap"
     xmlns:m="sap.m"
-    xmlns:form="sap.ui.layout.form"
+    xmlns:forms="sap.ui.layout.form"
 >
     <ObjectPageLayout
         id="opportunityPage"
@@ -77,29 +77,35 @@
                     >
                         <m:menu>
                             <m:Menu id="_IDGenMenu">
-                                <m:MenuItem id="_IDGenMenuItem"
+                                <m:MenuItem
+                                    id="_IDGenMenuItem"
                                     text="Preview Output"
                                     press="onPreviewOutput"
                                 />
-                                <m:MenuItem id="_IDGenMenuItem1"
+                                <m:MenuItem
+                                    id="_IDGenMenuItem1"
                                     text="Sales Assistant"
                                     enabled="false"
                                 />
-                                <m:MenuItem id="_IDGenMenuItem2"
+                                <m:MenuItem
+                                    id="_IDGenMenuItem2"
                                     text="Distribute"
                                     enabled="false"
                                 />
-                                <m:MenuItem id="_IDGenMenuItem3"
+                                <m:MenuItem
+                                    id="_IDGenMenuItem3"
                                     text="My DashBoard"
                                     icon="sap-icon://home"
                                     press="onDashboard"
                                 />
-                                <m:MenuItem id="_IDGenMenuItem4"
+                                <m:MenuItem
+                                    id="_IDGenMenuItem4"
                                     text="Personalize"
                                     icon="sap-icon://action-settings"
                                     press="onPersonalize"
                                 />
-                                <m:MenuItem id="_IDGenMenuItem5"
+                                <m:MenuItem
+                                    id="_IDGenMenuItem5"
                                     text="Print Page"
                                     icon="sap-icon://print"
                                     press="onPrint"
@@ -114,14 +120,85 @@
         <sections>
             <ObjectPageSection
                 id="_IDGenObjectPageSection"
-                title="Opportunity Details"
+                title="Material Details"
             >
                 <ObjectPageSubSection id="_IDGenObjectPageSubSection">
                     <blocks>
-                        <m:Text
+                        <!-- <m:Text
                             id="_IDGenText2"
                             text="Opportunity Details content goes here."
-                        />
+                        /> -->
+                        <forms:Form
+                            id="_IDGenForm"
+                            width="100%"
+                        >
+                            <forms:layout>
+                                <forms:ColumnLayout id="_IDGenColumnLayout" />
+                            </forms:layout>
+                            <forms:formContainers>
+                                <forms:FormContainer
+                                    id="addressInfo"
+                                    title="Addresses"
+                                >
+                                    <forms:formElements>
+                                        <forms:FormElement
+                                            id="_IDGenFormElement"
+                                            label="Home Address"
+                                        >
+                                            <forms:fields>
+                                                <m:Text
+                                                    id="_IDGenText2"
+                                                    text="2096 Mission Street"
+                                                />
+                                            </forms:fields>
+                                        </forms:FormElement>
+
+                                        <forms:FormElement
+                                            id="_IDGenFormElement1"
+                                            label="Home Mailing Address"
+                                        >
+                                            <forms:fields>
+                                                <m:Text
+                                                    id="_IDGenText5"
+                                                    text="PO Box 32114"
+                                                />
+                                            </forms:fields>
+                                        </forms:FormElement>
+                                    </forms:formElements>
+                                </forms:FormContainer>
+
+                                <forms:FormContainer
+                                    id="socialInfo"
+                                    title="Social Accounts"
+                                >
+                                    <forms:formElements>
+                                        <forms:FormElement
+                                            id="_IDGenFormElement3"
+                                            label="LinkedIn"
+                                        >
+                                            <forms:fields>
+                                                <m:Text
+                                                    id="_IDGenText7"
+                                                    text="/DeniseSmith"
+                                                />
+                                            </forms:fields>
+                                        </forms:FormElement>
+
+                                        <forms:FormElement
+                                            id="_IDGenFormElement2"
+                                            label="Twitter"
+                                        >
+                                            <forms:fields>
+                                                <m:Text
+                                                    id="_IDGenText6"
+                                                    text="@DeniseSmith"
+                                                />
+                                            </forms:fields>
+                                        </forms:FormElement>
+                                    </forms:formElements>
+                                </forms:FormContainer>
+                            </forms:formContainers>
+                        </forms:Form>
                     </blocks>
                 </ObjectPageSubSection>
             </ObjectPageSection>
